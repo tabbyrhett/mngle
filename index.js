@@ -15,6 +15,8 @@ app.engine('hbs', hbs.engine)
 app.set('view engine', 'hbs') // using hadlebars
 app.set('views', 'views') // folder with views named views lol
 
+app.use(express.urlencoded({extended: true}))
+
 app.use(todoRoutes)
 
 async function start() {
