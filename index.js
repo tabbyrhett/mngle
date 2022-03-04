@@ -2,7 +2,7 @@ const express = require('express')
 const mongoose = require('mongoose')
 const path = require('path')
 const exphbs = require('express-handlebars')
-const todoRoutes = require('./routes/todos')
+const stemRoutes = require('./routes/stems')
 
 const PORT = process.env.PORT || 5000
 
@@ -19,11 +19,11 @@ app.set('views', 'views') // folder with views named views lol
 app.use(express.urlencoded({extended: true}))
 app.use(express.static(path.join(__dirname, 'public')))
 
-app.use(todoRoutes)
+app.use(stemRoutes)
 
 async function start() {
     try {
-        await mongoose.connect('mongodb+srv://tabby:flowless@cluster0.8qffk.mongodb.net/todos?retryWrites=true&w=majority', {
+        await mongoose.connect('mongodb+srv://tabby:flowless@cluster0.8qffk.mongodb.net/shpitems?retryWrites=true&w=majority', {
 
         })
         app.listen(PORT, () => {

@@ -1,10 +1,25 @@
-<h2>Todos list</h2>
+<form action="/additem" method="POST">
+    <h2>Add Item</h2>
 
-{{#if todos.length}}
+    <div class="input-field">
+        <input type="text" name="inpitem" autofocus autocomplete="off">
+        <label></label>
+        {{!-- <label></label> tofix --}}
+        
+    </div>
+
+    <button type="submit" class="btn">Add</button>
+
+</form>
+
+
+{{!-- <h2></h2> --}}
+<br>
+{{#if stems.length}}
 <ul>
-    {{#each todos}}
+    {{#each stems}}
     {{!-- each x got id, title, completed --}}
-    <li class="todo">
+    <li class="stem">
         <form action="/complete" method="POST">
 
             <label>
@@ -27,5 +42,7 @@
     {{/each}}
 </ul>     
 {{else}}
-<p>Nothing, lol.</p>
+<p>Nothing to see here.</p>
 {{/if}}
+
+
