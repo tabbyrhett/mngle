@@ -5,18 +5,24 @@
     {{#each todos}}
     {{!-- each x got id, title, completed --}}
     <li class="todo">
-        <label>
+        <form action="/complete" method="POST">
 
-            {{#if completed}}
-                <input type="checkbox" checked>
-                <span class="completed">{{ title }}</span>
-            {{else}}
-                <input type="checkbox">
-                <span>{{ title }}</span>
-            {{/if}}
+            <label>
 
-            <button class="btn btn-small">Save</button>
-        </label>
+                {{#if completed}}
+                    <input type="checkbox" checked name="completed">
+                    <span class="completed">{{ title }}</span>
+                {{else}}
+                    <input type="checkbox" name="completed">
+                    <span>{{ title }}</span>
+                {{/if}}
+
+                <input type="hidden" value="{{_id}}" name="idee">
+    
+                <button class="btn btn-small" type="submit">Save</button>
+            </label>
+
+        </form>
     </li>
     {{/each}}
 </ul>     

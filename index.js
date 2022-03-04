@@ -1,5 +1,6 @@
 const express = require('express')
 const mongoose = require('mongoose')
+const path = require('path')
 const exphbs = require('express-handlebars')
 const todoRoutes = require('./routes/todos')
 
@@ -16,6 +17,7 @@ app.set('view engine', 'hbs') // using hadlebars
 app.set('views', 'views') // folder with views named views lol
 
 app.use(express.urlencoded({extended: true}))
+app.use(express.static(path.join(__dirname, 'public')))
 
 app.use(todoRoutes)
 
