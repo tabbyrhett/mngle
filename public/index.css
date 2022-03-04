@@ -19,3 +19,17 @@
 .stem i {
     z-index: 2;
 }
+
+input:focus {
+  border-bottom: 1px solid dodgerblue !important;
+  box-shadow: 0 1px 0 0 dodgerblue !important;
+}
+
+input[type=checkbox] {
+    /* visibility: hidden; */
+    color: blue;
+}
+
+.checkbox > input:checked {
+    color: blue;
+}
